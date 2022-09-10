@@ -65,4 +65,4 @@ numNeighbors == 3):
             else:
                 # Everything else dies or stays dead:
                 nextCells[x][y] = ' '
-    time.sleep(0.1) # Add a 1-second pause to reduce flickering.
+    time.sleep(0.1) # Add a pause to reduce flickering.
