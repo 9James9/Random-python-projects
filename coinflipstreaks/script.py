@@ -2,7 +2,7 @@ import random
 import locale
 from decimal import Decimal
 numberOfStreaks = 0
-n_runs = 10000
+n_runs = 100000
 coinFlip = []
 streak = 0
 high_score = 0
@@ -13,9 +13,9 @@ def f(d):
 locale.setlocale(locale.LC_ALL, 'en_us')
 for experimentNumber in range(n_runs):
     coinFlip = []
-    notification_threshhold = 1000
+    notification_threshhold = 10000
     if experimentNumber % notification_threshhold == 0:
-        print('Run number: ' + str(f(Decimal(experimentNumber * notification_threshhold))))
+        print('Flip number: ' + str(f(Decimal(experimentNumber * flips_per_run))))
     for i in range(flips_per_run):
         coinFlip.append(random.randint(0,1))
         if i==0:
