@@ -6,7 +6,6 @@ def displayInventory(inv):
         print(k+": " + str(v))
         total_items += 1
     print("Total number of items: " + str(total_items))
-# displayInventory(inv)
 
 def addToInventory(inv,addedItems):
     for item in addedItems:
