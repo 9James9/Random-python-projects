@@ -10,7 +10,8 @@ def extract():
     [-.,]?
     \d{4}
     """,re.VERBOSE)
-    emailRegex = re.compile('\w+@\w+\.\w+')
+    emailRegex = re.compile(r'[\w.+-]+@[\w-]+\.[\w.-]+')
+    
     phones = phoneNumRegex.findall(info)
     emails = emailRegex.findall(info)
     print(f"""
@@ -18,5 +19,5 @@ def extract():
 
    Phone Numbers: {phones}
     """)
-    pyperclip.copy(f'{emails}{phones}')
+
 extract()
