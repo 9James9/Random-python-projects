@@ -18,4 +18,5 @@ def extract():
 
    Phone Numbers: {phones}
     """)
+    pyperclip.copy(f'{emails}{phones}')
 extract()
