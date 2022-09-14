@@ -8,7 +8,7 @@ def flip():
         return "H"
     elif output == 1:
         return "T"
-while streak < 69 and tries != 1000000:
+while streak < 69 and tries != 10000000:
     first = flip()
     second = flip()
     print(first,second)
