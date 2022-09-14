@@ -6,4 +6,13 @@ def displayInventory(inv):
         print(k+": " + str(v))
         total_items += 1
     print("Total number of items: " + str(total_items))
+# displayInventory(inv)
+
+def addToInventory(inv,addedItems):
+    for item in addedItems:
+        inv.setdefault(item,0)
+        inv[item] += 1
+    return inv
+loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+inv = addToInventory(inv,loot)
 displayInventory(inv)
