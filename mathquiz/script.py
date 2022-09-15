@@ -44,4 +44,3 @@ for questionNumber in range(numberOfQuestions):
         correctAnswers += 1
         time.sleep(0.5)
         print(f'Score: {correctAnswers}/{numberOfQuestions}')
-    
