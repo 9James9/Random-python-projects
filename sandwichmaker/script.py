@@ -12,19 +12,19 @@ if cheese == 'yes':
     sandwich.append(cheeseType)
 else:
     cheeseType = 'None'
-mayo = pyip.inputYesNo('Do you want Mayo?')
+mayo = pyip.inputYesNo('Do you want Mayo?\n')
 if mayo:
     sandwich.append('Mayo')
-mustard = pyip.inputYesNo('Do you want Mustard?')
+mustard = pyip.inputYesNo('Do you want Mustard?\n')
 if mustard:
     sandwich.append('mustard')
-lettuce = pyip.inputYesNo('Do you want lettuce?')
+lettuce = pyip.inputYesNo('Do you want lettuce?\n')
 if lettuce:
     sandwich.append('lettuce')
-tomato = pyip.inputYesNo('Do you want tomato')
+tomato = pyip.inputYesNo('Do you want tomato\n')
 if tomato:
     sandwich.append('tomato')
-quantity = pyip.inputInt('How many sandwiches do you want?')
+quantity = pyip.inputInt('How many sandwiches do you want?\n')
 print(f'Your sandwich is {sandwich}')
 
 prices = {
@@ -49,4 +49,5 @@ for item in sandwich:
 print('Your sandwich has:\n')
 for ingr in sandwich:
     print(ingr)
+print('\n')
 print(f'Your total price is: {totalPrice * quantity}')
