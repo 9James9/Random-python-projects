@@ -3,7 +3,7 @@ import random, time
 
 numberOfQuestions = 10
 correctAnswers = 0
-difficulty = pyip.inputNum('How high do you want the numbers to go?\n')
+difficulty = pyip.inputNum('How high do you want the numbers to go?\n', greaterThan=3)
 for questionNumber in range(numberOfQuestions):
     num1 = random.randint(1,difficulty)
     num2 = random.randint(1,difficulty)
