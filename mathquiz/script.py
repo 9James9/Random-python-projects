@@ -5,9 +5,9 @@ numberOfQuestions = 10
 correctAnswers = 0
 difficulty = pyip.inputNum('How high do you want the numbers to go?\n')
 for questionNumber in range(numberOfQuestions):
-    num1 = random.randint(0,difficulty)
-    num2 = random.randint(0,difficulty)
-    symbol = random.randint(0,2)
+    num1 = random.randint(1,difficulty)
+    num2 = random.randint(1,difficulty)
+    symbol = random.randint(0,3)
     answer = ''
     if symbol == 0:
         symbol = 'X'
@@ -18,6 +18,14 @@ for questionNumber in range(numberOfQuestions):
     elif symbol == 2:
         symbol = '-'
         answer = num1 - num2
+    elif symbol == 3:
+        if num1 % num2 == 0:
+            symbol = '/'
+            answer = int(num1 / num2)
+        else:
+            symbol = 'X'
+            answer = num1 * num2
+
     prompt = f'{questionNumber}: {num1}{symbol}{num2}\n'
     try:
         pyip.inputStr(prompt,allowRegexes=[f'^{answer}$'],
