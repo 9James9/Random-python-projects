@@ -3,28 +3,34 @@ import random, time
 
 numberOfQuestions = 10
 correctAnswers = 0
+difficulty = pyip.inputNum('How high do you want the numbers to go?\n')
 for questionNumber in range(numberOfQuestions):
-    num1 = random.randint(0,9)
-    num2 = random.randint(0,9)
-    # symbol = random.randint(0,3)
-    # if symbol == 0:
-    #     symbol = 'X'
-    # elif symbol == 1:
-    #     symbol = '/'
-    # elif symbol == 2:
-    #     symbol = '+'
-    # elif symbol == 3:
-    #     symbol = '-'
-    symbol = 'X'
+    num1 = random.randint(0,difficulty)
+    num2 = random.randint(0,difficulty)
+    symbol = random.randint(0,2)
+    answer = ''
+    if symbol == 0:
+        symbol = 'X'
+        answer = num1 * num2
+    elif symbol == 1:
+        symbol = '+'
+        answer = num1 + num2
+    elif symbol == 2:
+        symbol = '-'
+        answer = num1 - num2
     prompt = f'{questionNumber}: {num1}{symbol}{num2}\n'
     try:
-        pyip.inputStr(prompt,allowRegexes=[f'^{num1 * num2}$'],
+        pyip.inputStr(prompt,allowRegexes=[f'^{answer}$'],
                             blockRegexes=[('.*','Incorrect!')],
                             timeout=8, limit=3)
     except pyip.TimeoutException:
         print('Out of time!')
+        print(f'Answer was {answer}')
+        break
     except pyip.RetryLimitException:
         print('Out of tries!')
+        print(f'Answer was {answer}')
+        break
     else:
         print('Correct!')
         correctAnswers += 1
