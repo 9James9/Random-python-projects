@@ -1,7 +1,7 @@
 import pyinputplus as pyip
 import random, time
 
-numberOfQuestions = 10
+numberOfQuestions = pyip.inputNum('How many questions?\n', limit=1,default =10)
 correctAnswers = 0
 difficulty = pyip.inputNum('How high do you want the numbers to go?\n', greaterThan=3)
 for questionNumber in range(numberOfQuestions):
@@ -43,4 +43,4 @@ for questionNumber in range(numberOfQuestions):
         print('Correct!')
         correctAnswers += 1
         time.sleep(0.5)
-        print(f'Score: {correctAnswers}/{numberOfQuestions}')
+        print(f'Score: {difficulty * numberOfQuestions}')
