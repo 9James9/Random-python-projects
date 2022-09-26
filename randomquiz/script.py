@@ -49,5 +49,6 @@ for quizNum in range(35):
             quizFile.write('\n')
         answerKeyFile.write(f"{questionNum + 1}. {'ABCD'[answerOptions.index(correctAnswer)]}")
 runTracker['run_number'] += 1
+runTracker.close()
 quizFile.close()
 answerKeyFile.close()
